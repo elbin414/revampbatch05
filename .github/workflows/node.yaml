@@ -1,0 +1,19 @@
+name: Basic node application
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  node:
+    runs-on: [self-hosted, wl ebina]
+
+    steps:
+      - name: clone code
+       uses:  actions/checkout@v7
+
+      - name: Install Dependencies
+       run: npm install
+
+
+      - name: Run application
+       run: node app.js
